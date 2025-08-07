@@ -47,4 +47,9 @@ This is a simple yet effective web-based **Stock Price Prediction System** built
 ├── train_model.py # Model training script (optional)
 ├── requirements.txt # Python dependencies
 └── README.md # You're here!
+<img width="1919" height="850" alt="image" src="https://github.com/user-attachments/assets/af76ef19-1ba0-4aaa-bd1b-b97915053157" />
+<img width="1915" height="875" alt="Screenshot 2025-08-07 235144" src="https://github.com/user-attachments/assets/056c4dd4-b8bd-466a-9873-1955159fb077" />
+
+
+
 # stock-price-prediction
