@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictor</title>
+    
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Include Chart.js library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Price Prediction Model</h1>
+        <p>
+            Enter a stock ticker to train a simple linear regression model on data from 2020-2024. 
+            The chart displays the model's predictions (trend line) against the actual prices on the test data (the last 20% of the period).
+        </p>
+        
+        <div class="input-group">
+            <input type="text" id="ticker" placeholder="e.g., AAPL, TSLA, NFLX">
+            <button id="predictBtn" onclick="fetchPrediction()">Get Prediction</button>
+        </div>
+        
+        <!-- Area to display results or error messages -->
+        <div class="message-area">
+            <div id="result-title"></div>
+            <div id="error-message"></div>
+        </div>
+
+        <!-- The container for the chart, hidden by default -->
+        <div class="chart-container" id="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
