@@ -71,8 +71,7 @@ async function fetchPrediction() {
 
         const data = await response.json();
 
-        // --- DEBUGGING STEP 1 ---
-        // This will print the full received data object to the browser console.
+      
         console.log("--- DEBUG: Data received by JavaScript from server ---");
         console.log(data);
         console.log("-------------------------------------------------");
@@ -81,8 +80,7 @@ async function fetchPrediction() {
             throw new Error(data.error || 'An unknown server error occurred.');
         }
         
-        // --- DEBUGGING STEP 2 ---
-        // Explicitly check if the predicted array is missing or empty.
+      
         if (!data.predicted || data.predicted.length === 0) {
             throw new Error("The server returned no prediction data points. The red line cannot be drawn.");
         }
@@ -96,4 +94,5 @@ async function fetchPrediction() {
         predictBtn.disabled = false;
         predictBtn.textContent = 'Get Prediction';
     }
+
 }
