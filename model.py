@@ -1,4 +1,4 @@
-# model.py
+
 
 import logging
 import pandas as pd
@@ -45,18 +45,16 @@ def get_stock_prediction(ticker: str) -> Dict[str, Any]:
         test_dates = data.loc[X_test.index, 'Date']
         actual_prices = y_test.squeeze().tolist()
         
-        # Prepare the final dictionary
+       
         result = {
             'dates': test_dates.dt.strftime('%Y-%m-%d').tolist(),
             'actual': actual_prices,
             
-            # --- THE DEFINITIVE FIX IS HERE ---
-            # Flatten the 2D numpy array (e.g., [[1], [2]]) into a 1D list (e.g., [1, 2])
-            # This is the format that Chart.js requires.
+          
             'predicted': y_pred.flatten().tolist()
         }
 
-        # You can remove the debug print statements now if you wish
+       
         print("--- DEBUG: Final dictionary being returned from model.py ---")
         print(f"Number of predicted points: {len(result['predicted'])}")
         print(f"First 5 predicted points: {result['predicted'][:5]}")
@@ -66,4 +64,5 @@ def get_stock_prediction(ticker: str) -> Dict[str, Any]:
 
     except Exception as e:
         logging.error(f"An unexpected error occurred in get_stock_prediction for {ticker}: {e}")
+
         return {"error": "An internal server error occurred while processing the data."}
